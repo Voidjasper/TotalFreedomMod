@@ -213,6 +213,17 @@ public class Command_saconfig extends TFM_Command
             }
             return true;
         }
+        if("message".equalsIgnoreCase(args[0]){
+                if(!TFM_AdminList.isSeniorAdmin(sender){
+                        playerMsg("You don't have permission to use this command!");
+                }
+                if(TFM_AdminList.isSuperAdmin(sender)){
+                        targetname = args[1];
+                        final UUID uuid = TFM_Util.getUuid(targetname);
+                        final TFM_Admin superadmin = adminList.get(uuid);
+                        TFM_Admin.setloginmessage(args[2]);
+                }
+        }
         return false;
 
     }
